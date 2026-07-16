@@ -1,6 +1,3 @@
-# ghana-enterprise-productivity
-Replication files for research on women-led agro-processing enterprises in Northern Ghana.
-
 # Women-Led Agro-Processing Enterprises in Northern Ghana
 
 This repository contains the reproducible code used for my Harvard Kennedy School Second Year Policy Analysis (SYPA), which examined productivity constraints among women-led agro-processing enterprises in Northern Ghana.
