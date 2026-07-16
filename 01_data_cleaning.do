@@ -1,5 +1,5 @@
 /********************************************************************************************
-PROJECT: Ghana AHIES Multi-Year Enterprise Analysis
+PROJECT: Women-Led Agro-Processing Enterprises in Northern Ghana (Ghana AHIES Multi-Year Enterprise Analysis)
 FILE: 01_data_cleaning.do
 
 PURPOSE:
@@ -43,7 +43,7 @@ di "Cleaning AHIES `year'"
 di "======================================"
 
 *----------------------------------------------------------
-* Load data
+* Loading data
 *----------------------------------------------------------
 
 if "`filetype'"=="dta" {
@@ -69,7 +69,7 @@ if "`filetype'"=="csv" {
 }
 
 *----------------------------------------------------------
-* Harmonize sex
+* Harmonizing sex
 *----------------------------------------------------------
 
 capture confirm string variable s1aq1
@@ -95,7 +95,7 @@ label define sexlbl 1 "Male" 2 "Female", replace
 label values sex sexlbl
 
 *----------------------------------------------------------
-* Harmonize non-farm enterprise indicator
+* Harmonizing non-farm enterprise indicator
 *----------------------------------------------------------
 
 capture confirm string variable s4aq11
@@ -118,7 +118,7 @@ label define enterprise 0 "No" 1 "Yes", replace
 label values s4aq11 enterprise
 
 *----------------------------------------------------------
-* Harmonize employer type
+* Harmonizing employer type
 *----------------------------------------------------------
 
 capture confirm string variable s4aq42
@@ -162,7 +162,7 @@ gen year = `year'
 label var year "Survey year"
 
 *----------------------------------------------------------
-* Restrict to adults
+* Restricting to adults
 *----------------------------------------------------------
 
 keep if s1aq4y >=18
@@ -186,7 +186,7 @@ gen female = (sex==2)
 label var female "Female respondent"
 
 *----------------------------------------------------------
-* Reconstruct industry code
+* Reconstructing industry code
 *----------------------------------------------------------
 
 gen industry = s4aq41a3
@@ -256,13 +256,13 @@ tostring hhid, replace
 }
 
 *----------------------------------------------------------
-* Convert weights if necessary
+* Converting weights if necessary
 *----------------------------------------------------------
 
 capture destring pop_weight hh_weight, replace force
 
 *----------------------------------------------------------
-* Save cleaned file
+* Saving cleaned file
 *----------------------------------------------------------
 
 compress
@@ -274,7 +274,7 @@ di "`year' cleaned successfully."
 end
 
 *--------------------------------------------------------------
-* Run cleaning
+* Running cleaning
 *--------------------------------------------------------------
 
 build_ahies ///
