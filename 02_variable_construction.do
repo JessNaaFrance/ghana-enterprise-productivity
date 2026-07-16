@@ -32,7 +32,7 @@ global processed "$project/data/processed"
 capture mkdir "$processed"
 
 *------------------------------------------------------------*
-* 1. Ensure survey weights are numeric
+* 1. Ensuring survey weights are numeric
 *------------------------------------------------------------*
 
 foreach y in 2022 2023 2024 {
@@ -46,7 +46,7 @@ foreach y in 2022 2023 2024 {
 }
 
 *------------------------------------------------------------*
-* 2. Append all survey years
+* 2. Appending all survey years
 *------------------------------------------------------------*
 
 use "$clean/2022_ahies_clean.dta", clear
@@ -83,7 +83,7 @@ label variable year ///
     "Survey year"
 
 *------------------------------------------------------------*
-* 4. Order variables
+* 4. Ordering variables
 *------------------------------------------------------------*
 
 order hhid year ///
@@ -96,7 +96,7 @@ sort year hhid
 compress
 
 *------------------------------------------------------------*
-* 5. Save pooled analytical dataset
+* 5. Saving pooled analytical dataset
 *------------------------------------------------------------*
 
 save "$processed/ahies_2022_2024_pooled.dta", replace
