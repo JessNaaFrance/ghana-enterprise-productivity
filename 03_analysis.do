@@ -16,7 +16,7 @@ AUTHOR:
 ********************************************************************************************/
 
 *--------------------------------------------------------------
-* INSTALL REQUIRED USER-WRITTEN PACKAGES (FIRST RUN ONLY)
+* INSTALLING REQUIRED USER-WRITTEN PACKAGES (FIRST RUN ONLY)
 *--------------------------------------------------------------
 
 capture which esttab
@@ -35,7 +35,7 @@ set more off
 cd "$project"
 
 *------------------------------------------------------------*
-* Load analytical dataset
+* Loading analytical dataset
 *------------------------------------------------------------*
 
 use "data/processed/ahies_2022_2024_pooled.dta", clear
@@ -63,7 +63,7 @@ tab formal
 
 
 *--------------------------------------------------------------
-* CREATE OUTPUT FOLDERS
+* CREATING OUTPUT FOLDERS
 *--------------------------------------------------------------
 
 global output "$project/output"
@@ -235,7 +235,7 @@ eststo Gender
 
 
 *--------------------------------------------------------------
-* EXPORT REGRESSION TABLE
+* EXPORTING REGRESSION TABLE
 *--------------------------------------------------------------
 esttab Baseline Gender using ///
 "o$tables/pooled_ols_results.rtf", ///
