@@ -34,7 +34,7 @@ docs/
     Documentation describing the project and analytical approach.
 
 output/
-    Placeholder folders showing where tables and figures are produced.
+    Available on request.
 
 ---
 
